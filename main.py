@@ -14,7 +14,7 @@ def plot_points(chunks, coord):
 
     # to draw the final chunk max on grid + chunks delimiter
     major_ticks = np.arange(0, max_on_grid + chunks_delimiter, chunks_delimiter)
-    minor_ticks = np.arange(0, max_on_grid + chunks_delimiter, chunks_delimiter)
+    minor_ticks = np.arange(0, max_on_grid + chunks_delimiter, 1)
 
     row = int((coord[0]) / chunks)
     col = int((coord[0]) % chunks)
@@ -34,8 +34,10 @@ def plot_points(chunks, coord):
     ax.xaxis.tick_top()
     ax.yaxis.tick_left()
 
+    plt.title("({},{},{})".format(coord[0],coord[1], coord[2]))
     plt.plot(x_coord, y_coord, "ro")
-    #plt.grid()
+    ax.grid(which='minor', alpha=0.2)
+    ax.grid(which='major', alpha=0.5)
     plt.show()
 
 
