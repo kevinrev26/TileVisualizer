@@ -37,7 +37,7 @@ def plot_points(chunks, coord):
     plt.title("({},{},{})".format(coord[0],coord[1], coord[2]))
     plt.plot(x_coord, y_coord, "ro")
     ax.grid(which='minor', alpha=0.2)
-    ax.grid(which='major', alpha=0.5)
+    ax.grid(which='major', alpha=0.8)
     plt.show()
 
 
