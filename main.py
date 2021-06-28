@@ -1,7 +1,12 @@
+
+import os 
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Constants
 chunks_delimiter = 16    
+directory_name = "results"
+
 
 def plot_points(chunks, coord):
 
@@ -34,14 +39,22 @@ def plot_points(chunks, coord):
     ax.xaxis.tick_top()
     ax.yaxis.tick_left()
 
+    title = "{}_{}_{}".format(coord[0],coord[1], coord[2])
     plt.title("({},{},{})".format(coord[0],coord[1], coord[2]))
     plt.plot(x_coord, y_coord, "ro")
     ax.grid(which='minor', alpha=0.2)
     ax.grid(which='major', alpha=0.8)
-    plt.show()
+    plt.savefig("results/{}.png".format(title))
+    #plt.show()
 
+    print("All the values have been saved on {} directory".format(directory_name) )
 
 if __name__ == "__main__":
+    # Create results directory if not exists
+    if not os.path.exists(directory_name):
+        os.mkdir(directory_name)
+        print("Directory created!")
+
     chunks = input("chunks: ")
     input_coordinate = input("Enter coordinate (n, x, y): ")
     
