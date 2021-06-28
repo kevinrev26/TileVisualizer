@@ -22,7 +22,7 @@ There should be a `data.csv` file on the root directory (or same level as `main.
 ```
 [NUMBER OF CHUNKS (grid size)], [CHUNK ID], [X], [Y]
 ```
-There is a data.csv with sample data to check the structure
+The number of chunks should be the same size, There is a data.csv with sample data to check the structure
 
 ## Running
 
