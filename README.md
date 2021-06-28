@@ -15,6 +15,15 @@
     ```
     pip install -r requirements.txt
     ```
+
+## Data preparation
+There should be a `data.csv` file on the root directory (or same level as `main.py`). The following structure is mandatory:
+
+```
+[NUMBER OF CHUNKS (grid size)], [CHUNK ID], [X], [Y]
+```
+There is a data.csv with sample data to check the structure
+
 ## Running
 
 Just type:
